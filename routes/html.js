@@ -1,8 +1,12 @@
-const express = require('express')
-const app = express()
+const path = require("path")
+const router = require("express").Router()
 
-app.get('/', function(req, res) {
-    res.send('Hello World')
+router.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"))
 })
 
-app.listen(3001);
+router.get("/notes", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/notes.html"))
+})
+
+module.exports = router
