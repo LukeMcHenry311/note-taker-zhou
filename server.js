@@ -1,16 +1,14 @@
 // dependencies
-const express = require('express');
-const path = require('path');
-const fs = require('fs');
+const express = require("express")
+const app = express()
+const port = process.env.PORT || 4001
+    app.use(express.static("public"))
 
-// routes
-const x = require('./routes/html');
-const z = require('./routes/api');
+    app.use(express.urlencoded({ extended:true}))
+    app.use(express.json())
 
-// referenced from express documentation
-// 4001 because 3001 wasn't working for me
-const app = express();
-const port = 4001;
+    app.use(require("./routes/html"))
+    app.use(require("./routes/api"))
 
 app.listen(port, function() {
     console.log(`now listening on port ${port}`)
