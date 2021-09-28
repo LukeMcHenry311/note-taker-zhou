@@ -1,4 +1,4 @@
-# Note Taker Starter Code
+# Note Taker Zhou
 
 ## Table of Contents
 * [Screenshot](#screenshot)
